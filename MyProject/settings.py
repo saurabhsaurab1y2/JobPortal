@@ -24,9 +24,13 @@ TEMPLATE_DIR=BASE_DIR/"templates"
 SECRET_KEY = 'django-insecure-q24kv#u31s$frtj!ni!$7!ms*@tteh5rd5%q2*i^+#m-8a2j-1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "jobportal-3ns2.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
