@@ -1,2 +1,22 @@
 # JobPortal
-Developed a full-stack Job Portal web application that connects job seekers with recruiters and simplifies the process of finding and managing job opportunities. The platform allows users to create accounts, browse available jobs, search and filter job listings, and apply for suitable positions.
+
+A full-stack **Job Portal web application** built using **Python and Django**. The platform allows job seekers to register, create profiles, search and filter job opportunities, and apply for jobs. Recruiters can post job vacancies and manage applications through the platform.
+
+### Features
+
+* User Registration & Login
+* Job Search & Filtering
+* Job Application System
+* Recruiter Job Posting
+* Application Management
+* User Profiles
+* Form Validation
+* Responsive UI
+* Feedback & Privacy Policy
+
+### Tech Stack
+
+* **Frontend:** HTML, CSS, JavaScript
+* **Backend:** Python, Django
+* **Database:** SQLite / MySQL
+* **Tools:** VS Code, Git, GitHub
