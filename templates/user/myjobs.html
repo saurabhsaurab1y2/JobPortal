@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block xyz %}
+
+<!--- search form start -->
+<div class="row py-3">
+    <div class="col-sm-10 mx-auto">
+        <p class="fs-3">
+            <b class="text-color1"> MY APPLIED JOBS</b><br/>
+            <span class="text-secondary small fs-6">
+                Track & Manage all the applied jobs status</span>
+        </p>
+                <hr class="w-25 text-color1 fw-bold">
+               
+</div></div>
+
+   <!-- analytics section -->
+            <div class="row services">
+                <div class="col-sm-10 mx-auto p-1">
+                    <div class="row">
+                        <!--sbox-->
+                         <div class="col-sm-4 p-2">
+                            <div class="shadow-lg alert alert-primary p-3">
+                                <div class="d-flex gap-3 align-items-center">
+                                <i class="fa fa-file-text fs-1 text-color1"></i> 
+                                <div>
+                                <b> {{a}} Jobs</b><br>
+                                <span class="text-secondary">Total Applied</span>
+                                </div>
+                                </div>
+                            </div>
+                         </div>
+                        <!--sbox end-->
+
+                        <!--sbox-->
+                         <div class="col-sm-4 p-2">
+                            <div class="shadow-lg p-3 alert alert-warning">
+                                <div class="d-flex gap-3  align-items-center">
+                                <i class="fa fa-search fs-1 text-color1"></i> 
+                                <div>
+                                <b>{{u}} Jobs</b><br>
+                                <span class="text-secondary"> Under Review</span>
+                                </div>
+                                </div>
+                            </div>
+                         </div>
+                        <!--sbox end-->
+
+                        <!--sbox-->
+                         <div class="col-sm-4 p-2">
+                            <div class="shadow-lg p-3 alert alert-info">
+                                <div class="d-flex gap-3 align-items-center">
+                                <i class="fa fa-user fs-1 text-color1"></i> 
+                                <div>
+                                <b>{{ap}} Jobs</b><br>
+                                <span class="text-secondary">Total Pending</span>
+                                </div>
+                                </div>
+                            </div>
+                         </div>
+                        <!--sbox end-->
+
+                        <!--sbox-->
+                         <div class="col-sm-4 p-2">
+                            <div class="shadow-lg p-3 alert alert-success">
+                                <div class="d-flex gap-3 align-items-center">
+                                <i class="fa fa-check-circle fs-1 text-color1"></i> 
+                                <div>
+                                <b>{{s}} Jobs</b><br>
+                                <span class="text-secondary">Total Selected</span>
+                                </div>
+                                </div>
+                            </div>
+                         </div>
+                        <!--sbox end-->
+
+                        <!--sbox-->
+                         <div class="col-sm-4 p-2">
+                            <div class="shadow-lg p-3 alert alert-danger">
+                                <div class="d-flex gap-3 align-items-center">
+                                <i class="fa fa-times-circle fs-1 text-color1"></i> 
+                                <div>
+                                <b>{{r}} Jobs</b><br>
+                                <span class="text-secondary">Total Rejected</span>
+                                </div>
+                                </div>
+                            </div>
+                         </div>
+                        <!--sbox end-->
+
+                        <!--sbox-->
+                         <div class="col-sm-4 p-2">
+                            <div class="shadow-lg p-3 alert alert-success">
+                                <div class="d-flex gap-3 align-items-center">
+                                <i class="fa fa-thumbs-up fs-1 text-color1"></i> 
+                                <div>
+                                <b>{{l}} Jobs</b><br>
+                                <span class="text-secondary">Total Shortlisted</span>
+                                </div>
+                                </div>
+                            </div>
+                         </div>
+                        <!--sbox end-->
+
+                    </div>
+                </div>
+            </div>
+            <!--analytics section ends -->      
+
+              <!-- job section starts -->  
+               <div class="row mt-2">
+                <div class="col-sm-10 mx-auto"><div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        {% for j in job %}
+                              <!--Job Box-->
+                    <div class="col-sm-12">
+                        <div class="row shadow-sm p-3 mb-2 rounded m-1 align-items-center">
+                            <div class="col-sm-2 border-end">
+                              <img src="/{{j.job.company.logo}}" height="90px"/>
+                            </div>
+                            <div class="col-sm-4 border-end">
+                                <span class="text-color1 fs-5">{{j.job.title}}</span>
+                                <div class="d-flex gap-2">
+                                    <span class="small"><i class="fa fa-location text-color1"></i> 
+                                        {{j.job.company}}</span>
+                                    
+                                </div>
+                                <span class="badge text-bg-danger p-1">{{j.job.jobtype}}</span> &nbsp;&nbsp;&nbsp;
+                                <span class="badge text-bg-warning p-1">{{j.job.vacancy}} Openings</span><br><br>
+                                <span class="small text-secondary">Posted On :{{j.job.posted_on}}</span><br>
+                            </div>
+                            <div class="col-sm-2 border-end">
+                                <span class="fs-6 text-color1"><i class="fa fa-rupee">. {{j.job.salary}}</i></span>
+                                <br>
+                                <span class="text-secondary small">Experience : {{j.job.experience}}</span>
+                                <br>
+                                <span class="text-secondary small">Last Date :{{j.job.lastdate}}</span>
+                                 <a href="/user/jobdetail?jid={{j.job.id}}" 
+                        style="text-decoration: none;">
+                                <button type="button" class="btn btn-danger mt-1"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  View details
+</button></a>
+                            </div>
+                            <div class="col-sm-2 border-end">
+                                {% if j.status == 'Applied' %}
+                                <button class="alert alert-primary"><i class="fa-solid fa-dot-circle"></i>
+                                    {{j.status}}</button>
+                                {% elif j.status == 'Under Review' %}
+                                <button class="alert alert-warning"><i class="fa-solid fa-dot-circle"></i>
+                                    {{j.status}}</button>
+                                      {% elif j.status == 'Shortlisted' %}
+                                <button class="alert alert-info"><i class="fa-solid fa-dot-circle"></i>
+                                    {{j.status}}</button>
+                                      {% elif j.status == 'Rejected' %}
+                                <button class="alert alert-danger"><i class="fa-solid fa-dot-circle"></i>
+                                    {{j.status}}</button>
+                                      {% elif j.status == 'Selected' %}
+                                <button class="alert alert-success"><i class="fa-solid fa-dot-circle"></i>
+                                    {{j.status}}</button>
+                                {% endif %}
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="/user/delete?jid={{j.job.id}}" 
+                                style="text-decoration: none;">
+                            <button class="btn btn-danger">Withdraw</button>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Job Box End-->
+                    {% empty %}
+                    <div class="alert alert-warning alert-dismissible fade show" 
+                    role="alert">
+  <strong>No Job Found!</strong> You haven't applied on any job till now. 
+  <a href="/user/jobs">Click here</a> to explore more jobs. 
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+  </button>
+</div>
+                    {% endfor %}
+                    </div>
+                </div>
+                <div class="col-sm-4"></div>
+               </div></div></div>
+              <!-- job section ends -->
+{% endblock %}

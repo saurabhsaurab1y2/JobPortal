@@ -1,0 +1,458 @@
+<html>
+{% load static %}
+
+<head>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/all.css '%}" rel="stylesheet" />
+    <style>
+        .bg-color1 {
+            background: #d50000;
+        }
+        
+        .text-color1 {
+            color: #d50000;
+        }
+        
+        .bg-color2 {
+            background: linear-gradient(45deg, #d50000, #b00000);
+        }
+        
+        .text-color2 {
+            color: #64288f;
+        }
+        
+        .t .fa-brands {
+            color: #ee4f1e;
+            border: 1px solid #ee4f1e;
+            height: 28px;
+            width: 28px;
+            text-align: center;
+            line-height: 28px;
+            border-radius: 2px;
+            transition: all .8s;
+        }
+        
+        .t .fa-brands:hover {
+            transform: rotate(360deg);
+            background: #ee4f1e;
+            color: white;
+            transition: all .8s;
+        }
+        
+        #menu {
+            background: linear-gradient(45deg, #d50000, #b00000) !important;
+        }
+        
+        #menu ul li a {
+            color: white;
+        }
+        
+        .slider {
+            background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .8)),
+            url("{% static 'images/4.jpg' %}");
+            min-height: 400px;
+            max-height: 450px;
+            background-size: 100% 100%;
+        }
+        
+        .btn1 {
+            height: 45px;
+            width: 130px;
+            text-align: center;
+            border: 3px solid #d50000;
+            color: white;
+            display: block;
+            line-height: 39px;
+            text-decoration: none;
+            border-radius: 3px;
+            background: #d50000;
+        }
+        
+        .services .fa-solid {
+            height: 50px;
+            width: 50px;
+            color: #ee4f1e;
+            text-align: center;
+            line-height: 50px;
+            background: #ffede7;
+            border-radius: 3px;
+        }
+        
+        .text-justify {
+            text-align: justify;
+        }
+        
+        .form-control {
+            height: 45px;
+            margin-bottom: 3%;
+            background: rgba(0, 0, 0, .05) !important;
+        }
+        
+        .txta {
+            height: 143px;
+            resize: none;
+        }
+        
+        .profilediv {
+            height: 150px;
+            transition: 1s;
+        }
+        
+        .profilediv:hover {
+            background: lightgrey;
+            border: 1px solid #ee4f1e !important;
+            transition: 1s;
+        }
+        
+        .profile a:hover {
+            background: #ee4f1e;
+        }
+        
+        .profileimg {
+            bottom: -70px;
+            left: 360px;
+        }
+        
+        .register a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .register a:hover {
+            color: #ee4f1e;
+        }
+        
+        .login {
+            min-height: 150px;
+            background: white;
+            margin: 100px auto;
+            border-radius: 15px;
+            padding: 35px;
+        }
+        
+        .dashcard1 {
+            transition: 2s;
+        }
+        
+        .dashcard1:hover {
+            transition: 2s;
+            background: #FFCDD2;
+            transform: scale(1.05);
+        }
+        
+        .dashcard2 {
+            transition: 2s;
+        }
+        
+        .dashcard2:hover {
+            transition: 2s;
+            background: #E6EE9C;
+            transform: scale(1.05);
+        }
+        
+        .dashcard3 {
+            transition: 2s;
+        }
+        
+        .dashcard3:hover {
+            transition: 2s;
+            background: #E1BEE7;
+            transform: scale(1.05);
+        }
+        
+        .dashcard4 {
+            transition: 2s;
+        }
+        
+        .dashcard4:hover {
+            transition: 2s;
+            background: #B2DFDB;
+            transform: scale(1.05);
+        }
+        
+        .dashcard5 {
+            transition: 2s;
+        }
+        
+        .dashcard5:hover {
+            transition: 2s;
+            background: #CCFF90;
+            transform: scale(1.05);
+        }
+        
+        .dashcard6 {
+            transition: 2s;
+        }
+        
+        .dashcard6:hover {
+            transition: 2s;
+            background: #80D8FF;
+            transform: scale(1.05);
+        }
+        
+        .dashcard7 {
+            transition: 2s;
+        }
+        
+        .dashcard7:hover {
+            transition: 2s;
+            background: #BCAAA4;
+            transform: scale(1.05);
+        }
+        
+        .dashcard8 {
+            transition: 2s;
+        }
+        
+        .dashcard8:hover {
+            transition: 2s;
+            background: #F8BBD0;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10 ">
+                <div class="row t">
+                    <div class="col-sm-3 fs-3">
+                        JOB <b class="text-color1">PORTAL
+                                <i class="fa-solid fa-laptop"></i>
+                            </b>
+                    </div>
+                    <div class="col-sm-3 text-center py-2">
+                        <i class="fa-solid fa-phone"></i> +91-7081035627
+                    </div>
+                    <div class="col-sm-3 text-center py-2">
+                        <i class="fa-solid fa-envelope"></i> saurabh@gmail.com
+                    </div>
+                    <div class="col-sm-3 text-end py-2">
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+                        <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--start menu-->
+                    <div class="col-sm-12">
+                        <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+                            <div class="container-fluid">
+
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="/user/index/"><i class="fa-solid fa-home"></i> Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/user/about/"><i class="fa-solid fa-circle-info"></i> About Us</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/user/company/"><i class="fa fa-industry"></i> Companies</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/user/jobs/"><i class="fa fa-briefcase"></i> Jobs</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/user/gallery/"><i class="fa-solid fa-images"></i> Gallery</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/user/contact/"><i class="fa-solid fa-phone"></i> Contact Us</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/user/team/"><i class="fa-solid fa-users"></i> Team</a>
+                                        </li>
+                                        {% if request.session.email is None %}
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/user/login/"><i class="fa-solid fa-circle-user"></i> Login</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/user/registration/"><i class="fa-solid fa-address-card"></i> Registration</a>
+                                        </li>
+                                        {% else %}
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome , {{request.session.uname}}
+          </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item text-dark" href="/user/myjobs">My Jobs</a></li>
+                                                <li><a class="dropdown-item text-dark" href="/user/uprofile">My Profile</a></li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item text-dark" href="/jobseeker/logout">Logout</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><img src="/{{request.session.upic}}" class="rounded-circle" height="40px" width="40px" /></li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <!--end menu-->
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+
+
+        {% block xyz %} {% endblock %}
+
+
+        <!--services-->
+        <div class="row services">
+            <div class="col-sm-10 mx-auto p-3">
+                <div class="row">
+                    <!--sbox-->
+                    <div class="col-sm-4 p-2">
+                        <div class="shadow-lg p-3">
+                            <div class="d-flex gap-3 align-items-center">
+                                <i class="fa fa-user fs-1 text-color1"></i>
+                                <div>
+                                    <b>Easy Registration</b><br>
+                                    <span class="text-secondary"> Quick & Easy Sign Up</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sbox end-->
+
+                    <!--sbox-->
+                    <div class="col-sm-4 p-2">
+                        <div class="shadow-lg p-3">
+                            <div class="d-flex gap-3 align-items-center">
+                                <i class="fa fa-paper-plane fs-1 text-color1"></i>
+                                <div>
+                                    <b>Quick Apply</b><br>
+                                    <span class="text-secondary"> Apply in just a few clicks</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sbox end-->
+
+                    <!--sbox-->
+                    <div class="col-sm-4 p-2">
+                        <div class="shadow-lg p-3">
+                            <div class="d-flex gap-3 align-items-center">
+                                <i class="fa fa-search fs-1 text-color1"></i>
+                                <div>
+                                    <b>Find Jobs</b><br>
+                                    <span class="text-secondary"> Discover jobs that match your skills</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sbox end-->
+
+                    <!--sbox-->
+                    <div class="col-sm-4 p-2">
+                        <div class="shadow-lg p-3">
+                            <div class="d-flex gap-3 align-items-center">
+                                <i class="fa fa-building fs-1 text-color1"></i>
+                                <div>
+                                    <b>Top Companies</b><br>
+                                    <span class="text-secondary"> Explore jobs from trusted companies</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sbox end-->
+
+                    <!--sbox-->
+                    <div class="col-sm-4 p-2">
+                        <div class="shadow-lg p-3">
+                            <div class="d-flex gap-3 align-items-center">
+                                <i class="fa fa-th-large fs-1 text-color1"></i>
+                                <div>
+                                    <b>Job Categories</b><br>
+                                    <span class="text-secondary"> Find jobs by your preferred category</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sbox end-->
+
+                    <!--sbox-->
+                    <div class="col-sm-4 p-2">
+                        <div class="shadow-lg p-3">
+                            <div class="d-flex gap-3 align-items-center">
+                                <i class="fa fa-map-marker fs-1 text-color1"></i>
+                                <div>
+                                    <b>Location Based Jobs</b><br>
+                                    <span class="text-secondary"> Search</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--sbox end-->
+
+                </div>
+            </div>
+        </div>
+        <!--end services-->
+
+        <!--footer 1-->
+        <div class="row text-light bg-dark" style="min-height: 300px;">
+            <div class="col-sm-3 p-4">
+                <p><b>Contact Smart Coders</b></p>
+                <p>Phone Number</p>
+                <p>Email Address</p>
+                <p>Location</p>
+            </div>
+            <div class="col-sm-3 p-4">
+                <p><b>Quick Links</b></p>
+                <p>Home</p>
+                <p>About Us</p>
+                <p>Gallery</p>
+                <p>Services</p>
+                <p>Contact</p>
+            </div>
+            <div class="col-sm-3 p-4">
+                <p><b>Policies & Feedback</b></p>
+                <p>Privacy Policy</p>
+                <p>Terms & Conditions</p>
+                <p>Job Seeker Policy</p>
+                <p>Employer Policy</p>
+                <p>Give Feedback</p>
+                <p>Contact Support</p>
+            </div>
+
+            <div class="col-sm-3 p-4">
+                <p><b>Popular Programs</b></p>
+                <p>Software Development</p>
+                <p>Web Development</p>
+                <p>Data Analytics</p>
+                <p>Digital Marketing</p>
+                <p>UI/UX Design</p>
+                <p>IT & Networking</p>
+            </div>
+        </div>
+        <!--end footer 1-->
+
+        <!--footer 2-->
+        <div class="row bg-dark mt-1 text-light text-center py-3">
+            <div class="col-sm-6">
+                <b class="text-color1">Copywrite to &copy; : 
+                    </b><a href="https://www.techpile.in">Techpile Technology Private Limited</a>
+            </div>
+            <div class="col-sm-6">
+                <b class="text-color1">Designed & Developed By : </b> <a href="/user/profile/">Er. Saurabh Maurya</a>
+            </div>
+        </div>
+        <!--end footer 2-->
+
+    </div>
+    <script src="{% static 'js/bootstrap.bundle.js'%}"></script>
+</body>
+
+</html>

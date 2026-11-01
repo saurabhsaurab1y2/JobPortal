@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block xyz %}
+
+  <!-- job section starts -->  
+               <div class="row mt-2">
+                <div class="col-sm-10 mx-auto"><div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        {% for j in job %}
+                              <!--Job Box-->
+                    <div class="col-sm-12">
+                        <div class="row shadow-sm p-3 mb-2 rounded m-1 align-items-center">
+                            <div class="col-sm-2">
+                              <img src="/{{j.company.logo}}" height="90px"/>
+                            </div>
+                            <div class="col-sm-7 border-end">
+                                <span class="text-color1 fs-5">{{j.title}}</span>
+                                <div class="d-flex gap-2">
+                                    <span class="small"><i class="fa fa-location text-color1"></i> 
+                                        {{j.company}}</span>
+                                    
+                                </div>
+                                <span class="badge text-bg-danger p-1">{{j.jobtype}}</span> &nbsp;&nbsp;&nbsp;
+                                <span class="badge text-bg-warning p-1">{{j.vacancy}} Openings</span><br><br>
+                                <span class="small text-secondary">Posted On :{{j.posted_on}}</span><br>
+                            </div>
+                            <div class="col-sm-3">
+                                <span class="fs-6 text-color1"><i class="fa fa-rupee">. {{j.salary}}</i></span>
+                                <br>
+                                <span class="text-secondary small">Experience : {{j.experience}}</span>
+                                <br/>
+                                <span class="text-secondary small">Last Date :{{j.lastdate}}</span>
+                             <br/>    <a href="/user/apply?jid={{j.id}}" 
+                        style="text-decoration: none;">
+                    <button type="button" class="btn btn-primary mt-1 ">Apply Now
+</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Job Box End-->
+                    <!-- JD Box start -->
+                         <div class="col-sm-12">
+                        <div class="row shadow-sm p-3 mb-2 rounded m-1 align-items-center">
+                         <span class="fs-5">Job Description</span>
+                         <hr/>
+                         {{j.detail|safe}}<br/>
+                           <a href="/user/apply?jid={{j.id}}" 
+                        style="text-decoration: none;">
+                         <button class="btn btn-primary w-25">Apply Now</button>
+                       </a>
+                        </div>
+                            </div>
+                    <!-- JD box ends -->
+                     {% empty %}
+                    <div class="alert alert-warning alert-dismissible fade show" 
+                    role="alert">
+  <strong>No Job Found!</strong> Kindly Wait for Admin to post more jobs in this 
+  category. Or post your enquiry on contact us page. 
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+  </button>
+</div> xyz
+                    {% endfor %}
+                    </div>
+                </div>
+               
+               </div></div></div>
+              <!-- job section ends -->
+
+{% endblock %}

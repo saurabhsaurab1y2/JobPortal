@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block xyz %}
+
+<div class="row py-2">
+    <div class="col-sm-10 mx-auto">
+        <div class="row py-2 register">
+            <div class="col-sm-5 p-4 shadow-lg rounded-2" style="background: white;">
+                <p class="h4 text-center">Complete Your <b class="text-color1">Registration</b></p>
+                <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <span class="text-dark fw-bold">Name :</span><br/>
+                            <input type="text" name="name" required placeholder="Name" class="form-control"/>
+                            <span class="text-dark fw-bold">Contact No. :</span><br/>
+                            <input type="number" name="mobile" required placeholder="Mobile" class="form-control"/>
+                            <span class="text-dark fw-bold">Email ID :</span><br/>
+                            <input type="email" name="email" required placeholder="Email" class="form-control"/>
+                            <span class="text-dark fw-bold">Password :</span><br/>
+                            <input type="password" name="password" required placeholder="Password" class="form-control"/>
+                            <span class="text-dark fw-bold">Gender :</span>
+                            <input type="radio" value="Male" name="gender"/> Male  &nbsp;&nbsp;&nbsp;
+                            <input type="radio" value="Female" name="gender"/> Female <br/><br>
+                            <span class="text-dark fw-bold">Date Of Birth :</span><br/>
+                            <input type="date" name="dob" required class="form-control"/>
+                            <span class="text-dark fw-bold">Skills :</span><br/>
+                            <input type="text" name="skills" class="form-control" placeholder="Enter your all skills"/>
+                             <span class="text-dark fw-bold">Highest Qualification :</span><br/>
+                            <input type="text" name="education" class="form-control" required placeholder="Enter your highest Qualification"/>
+                            <span class="text-dark fw-bold">Experience :</span><br/>
+                            <select class="form-control" name="experience">
+                                <option>Fresher</option>
+                                 <option>0-1 Years</option>
+                                 <option>1-2 Years</option>
+                                 <option>2-3 Years</option>
+                                 <option>3-5 Years</option>
+                                 <option>5-7 Years</option>
+                                 <option>7-10 Years</option>
+                                 <option>10+ Years</option>
+                            </select>
+                            <span class="text-dark fw-bold">Upload Resume :</span><br/>
+                            <input type="file" name="resume" required class="form-control"/>
+                            <span class="text-dark fw-bold">Upload Profile Photo :</span><br/>
+                            <input type="file" name="fu" required class="form-control"/>
+                            <span class="text-dark fw-bold">Address :</span><br/>
+                            <textarea class="form-control txta" name="address" placeholder="Address"></textarea>
+                            
+                            <a href="/user/login/" class="float-end fw-bold text-color1">Already Registered? Login Now...</a>
+                            <input type="submit" value="Register Now" class="btn1 mt-2"/>
+                            </form>
+            </div>
+            <div class="col-sm-7">
+                <img src="{% static 'images/reg.jpg' %}" alt="" class="img-thumbnail"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

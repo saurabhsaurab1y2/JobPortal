@@ -1,0 +1,145 @@
+{% extends 'base.html' %} {% load static %} {% block xyz %}
+
+<!--slider-->
+<div class="row slider text-light py-5">
+    <div class="col-sm-10 mx-auto">
+        <div class="fs-1">
+            <h1>Find Your Dream Job Today</h1>
+        </div>
+        <div class="" style="font-size: 20px;">
+            Search in <span class="text-color1">1000+</span> available jobs &
+            <span class="text-color1">50+</span> Top Companies
+            <br>
+            <br>
+            <!--Search Form-->
+            <form method="post" action="/user/jobs/">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-sm-10">
+                        <!--col-sm-12-->
+                        <div class="row bg-light rounded p-4">
+
+                            <div class="col">
+                                <div class="input-group align-items-center">
+                                    <i class="fa fa-briefcase text-color1"></i> &nbsp;&nbsp;&nbsp;
+                                    <input type="text" style="background: none;border: 0px;" name="title" placeholder="Job Title, Skills" class="fs-6" aria-label="First name">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group align-items-center">
+                                    <i class="fa fa-location text-color1"></i> &nbsp;&nbsp;&nbsp;
+                                    <input type="text" style="background: none;border: 0px;" name="city" placeholder="Search by Location" class="fs-6" aria-label="First name">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="input-group align-items-center">
+                                    <i class="fa fa-certificate text-color1"></i> &nbsp;&nbsp;&nbsp;
+                                    <input type="text" style="background: none;border: 0px;" name="exp" placeholder="Search by Experience" class="fs-6" aria-label="First name">
+                                </div>
+                            </div>
+                            <div class="col-sm-2 text-end">
+                                <button type="submit" class="btn bg-color1 text-light">Search Now</button></div>
+                            <!-- class="col " -->
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!--Search Form End-->
+
+        </div>
+    </div>
+</div>
+<!--end slider-->
+
+<!--Job Category-->
+<div class="col-sm-10 mx-auto mt-3 ">
+    <p class="fs-3 ">Popular Job <b class="text-color1 ">Categories</b></p>
+    <hr class="w-25 text-color1 fw-bold ">
+    <div class="row ">
+        {% for c in cat %}
+        <!--Category Box-->
+        <div class="col-sm-2 ">
+            <a href="/user/jobs?cid={{c.id}}&r={{c.name}} Category " class="text-dark " style="text-decoration: none; ">
+                <div class="row shadow-sm p-3 mb-5 rounded text-center m-1 h-75 ">
+                    <center>
+                        <img src="/{{c.icon}} " height="80px " class="w-75 ">
+                    </center>
+                    <p class="fs-6 mt-3 ">{{c.name}}</p>
+                </div>
+            </a>
+        </div>
+        <!--Category Box End-->
+        {% endfor %}
+    </div>
+</div>
+<!--Job Category End-->
+
+<!--Featured Jobs-->
+<div class="col-sm-10 mx-auto mt-3 ">
+    <p class="fs-3 ">New <b class="text-color1 ">Openings</b></p>
+    <hr class="w-25 text-color1 fw-bold ">
+
+    <div class="row ">
+        <div class="col-sm-8 ">
+            <div class="row ">
+                {% for j in job %}
+                <!--Job Box-->
+                <div class="col-sm-12 ">
+                    <div class="row shadow-sm p-3 mb-2 rounded m-1 align-items-center ">
+                        <div class="col-sm-2 ">
+                            <img src="/{{j.company.logo}} " height="90px " />
+                        </div>
+                        <div class="col-sm-7 border-end ">
+                            <span class="text-color1 fs-5 ">{{j.title}}</span>
+                            <div class="d-flex gap-2 ">
+                                <span class="small "><i class="fa fa-location text-color1 "></i> 
+                                        {{j.company}}</span>
+
+                            </div>
+                            <span class="badge text-bg-danger p-1 ">{{j.jobtype}}</span> &nbsp;&nbsp;&nbsp;
+                            <span class="badge text-bg-warning p-1 ">{{j.vacancy}} Openings</span><br><br>
+                            <span class="small text-secondary ">Posted On : {{j.posted_on}}</span><br>
+                        </div>
+                        <div class="col-sm-3 ">
+                            <span class="fs-6 text-color1 "><i class="fa fa-rupee ">. {{j.salary}}</i></span>
+                            <br>
+                            <span class="text-secondary small ">Experience : {{j.experience}}</span>
+                            <br>
+                            <span class="text-secondary small ">Last Date :{{j.lastdate}}</span>
+                            <a href="/user/jobdetail?jid={{j.id}} " style="text-decoration: none; ">
+                                <button type="button " class="btn btn-danger mt-1 " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; ">
+  View details
+</button></a>
+                        </div>
+                    </div>
+                </div>
+                <!--Job Box End-->
+                {% endfor %}
+            </div>
+        </div>
+        <!-- City Section-->
+        <div class="col-sm-4 shadow-sm p-3 mb-5 rounded ">
+            <p class="fs-3 ">Search By <b class="text-color1 ">City</b></p>
+            <div class="row ">
+                {% for c in city %}
+                <div class="col-sm-6 shadow-sm p-3 mb-2 bg-body-tertiary rounded ">
+                    <a href="/user/jobs?cityid={{c.id}}&r={{c.name}} City " class="text-dark " style="text-decoration: none; ">
+                        <div class="d-flex gap-3 align-items-center ">
+                            <img src="/{{c.icon}} " height="40px " />
+                            <span class="fs-6 ">{{c.name}} <br>
+                            <span class="text-secondary " style="font-size: 10px; ">
+                                {{c.state}}, {{c.country}}</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- City Section End-->
+    </div>
+
+</div>
+<!--Featured Jobs End-->
+
+{% endblock %}

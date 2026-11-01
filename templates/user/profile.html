@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% load static %} {% block xyz %}
+
+<div class="row py-3">
+    <div class="col-md-10 mx-auto">
+        <p class="fs-3">About <b class="text-color1">Me</b></p>
+        <hr class="w-25" />
+        <div class="row p-4 shadow-lg">
+            <div class="col-sm-4">
+                <img src="{% static 'images/5.jpeg' %}" class="img-fluid">
+            </div>
+            <div class="col-sm-8">
+                <div>
+                    <h5>Saurabh Maurya</h5>
+                    <hr class="w-25 m-0">
+                    <span>Software Developer</span><br>
+                    <b>Skill</b><br>
+                    <span class="badge bg-dark">HTML</span>
+                    <span class="badge bg-dark">CSS</span>
+                    <span class="badge bg-dark">bootstrap</span>
+                    <span class="badge bg-dark">JavaScript</span>
+                    <span class="badge bg-dark">C Programming</span>
+                    <span class="badge bg-dark">Database</span>
+                    <span class="badge bg-dark">Python Programming</span>
+                    <span class="badge bg-dark">Django</span>
+                    <hr> I'm a passionate learner who enjoys creating websites and exploring the world of web development. Every new project helps me learn, grow, and improve my creativity. Currently, I'm focusing on HTML, CSS, Bootstrap, Python, and Django
+                    to create beautiful and functional web applications. Along with web development, I also love creating social media content and exploring creative design ideas. My goal is to become a skilled full-stack web developer and build websites
+                    that are attractive, fast, and easy to use.
+
+                    <br>
+                    <hr>
+                    <div class="t">
+                        <a href="https://www.facebook.com/share/1JKYwiRCLR/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/saurabh-maurya-5a198a3a9?utm_source=share_via&utm_content=
+                    profile&utm_medium=member_android"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@SaurabhMaurya01"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://wa.me/917081035627" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/saurabh_maurya_01_?igsh=MWRpdmk0MXU4YmZyNA=="><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

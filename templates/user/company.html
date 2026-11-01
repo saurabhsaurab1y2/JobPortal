@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block xyz %}
+
+<div class="row py-3">
+    <div class="col-sm-10 mx-auto">
+        <p class="fs-3">Explore <b class="text-color1">Companies</b></p>
+                <hr class="w-25 text-color1 fw-bold">
+                <!--Search Form-->
+                 <form method="post" action="/user/jobs/">
+                                {% csrf_token %}
+                    <div class="row"><div class="col-sm-12"><!--col-sm-12-->
+                    <div class="row bg-light rounded p-3">
+  <div class="col">
+    <div class="input-group align-items-center">
+    <i class="fa fa-briefcase text-color1"></i> &nbsp;&nbsp;&nbsp;
+    <input type="text" name="title" style="background: none;border: 0px;" placeholder="Job Title, Skills" class="fs-6" aria-label="First name">
+  </div>
+</div>
+<div class="col">
+    <div class="input-group align-items-center">
+    <i class="fa fa-location text-color1"></i> &nbsp;&nbsp;&nbsp;
+    <input type="text" name="city" style="background: none;border: 0px;" placeholder="Search by Location" class="fs-6" aria-label="First name">
+  </div>
+</div>
+<div class="col">
+    <div class="input-group align-items-center">
+    <i class="fa fa-certificate text-color1"></i> &nbsp;&nbsp;&nbsp;
+    <input type="text" name="exp" style="background: none;border: 0px;" placeholder="Search by Experience" class="fs-6" aria-label="First name">
+  </div>
+</div>
+<div class="col-sm-2 text-end"><button type="submit" class="btn bg-color1 text-light">Search Now</button></div>
+  <!-- class="col" -->
+</div></div></div>  </form>
+                    <!--Search Form End-->
+                <div class="row py-3">
+                    {% for c in comp %}
+                    <!-- Job Card Start-->
+                     <div class="col-sm-4 mb-3">
+                        <div class="card h-100 mb-3 shadow-lg mx-auto border border-0 p-3 rounded-3">
+                            <div class="row">
+                                <div class="col-4">
+                                    <img src="/{{c.logo}}" height="70" width="70"/>
+                                </div>
+                                <div class="col-8">
+                                    <b class="text-color1">{{c.name}}</b><br>
+                                    <p class="mb-1" style="font-size: 12px;">
+                                        <i class="fa-solid fa-location-dot text-color1"></i>
+                                     {{c.city}}, {{c.city.state}}</p>
+                                    <p class="mb-1" style="font-size: 12px;">
+                                        <i class="fa-solid fa-user text-color1"></i>
+                                     {{c.owner}}</p>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-justify">
+                                <i class="fa-solid fa-location-dot text-color1"></i>
+                                Address : {{c.address}}
+                            </p>
+                            <hr class="mb-1 mt-1"/>
+                            <div>
+                                <span class="text-color1">{{c.email}}</span>
+                                <span class="float-end">
+                                  <a href="/user/jobs?compid={{c.id}}&r={{c.name}} Company" 
+                        class="text-color1" style="text-decoration: none;">View Jobs 
+                                        <i class="fa-solid fa-arrow-right"></i></a>
+                                </span>
+                            </div>
+                        </div>
+                     </div>
+                    <!-- Job Card End-->
+                     {%endfor%}
+                </div>
+    </div>
+</div>
+
+{% endblock %}
